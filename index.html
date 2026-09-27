@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Box Styles</title>
+
+<!-- Swap this href between "styleA.css" and "styleB.css" to change the look -->
+<link rel="stylesheet" href="styleA.css">
+</head>
+<body>
+
+<!--
+  Boxes A-E live in a wrapper div so that:
+    - Style A can "flatten" this wrapper (display: contents) so all six
+      boxes act as one group of flex items for equal vertical spacing.
+    - Style B can lay this wrapper out as its own horizontal flex row,
+      independent of box F.
+-->
+<div class="container">
+  <div class="box" id="box-a">A</div>
+  <div class="box" id="box-b">B</div>
+  <div class="box" id="box-c">C</div>
+  <div class="box" id="box-d">D</div>
+  <div class="box" id="box-e">E</div>
+</div>
+
+<!-- Box F is kept outside the container since it's always styled/positioned
+     as a special case (different color/border in A, fixed corner in B) -->
+<div class="box last" id="box-f">F</div>
+
+</body>
+</html>
