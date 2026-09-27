@@ -1,0 +1,57 @@
+/* STYLE B -- row pinned top-left, F pinned bottom-right */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: Tahoma, sans-serif;
+  font-size: 40px;
+}
+
+.container {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;   /* never wrap */
+  gap: 10px;
+}
+
+.box {
+  width: 100px;
+  height: 150px;
+  flex-shrink: 0;
+  background-color: #eeeff2;
+  border-left: 10px dotted #D0D0FF;
+  padding: 10px;
+  white-space: nowrap;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  color: #333;
+}
+
+.box:hover {
+  cursor: pointer;
+  background-color: yellow;
+  color: goldenrod;
+}
+
+/* F breaks out of the row, pinned to bottom-right instead */
+.box.last {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  top: auto;
+  left: auto;
+  margin: 0;
+}

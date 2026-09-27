@@ -1,0 +1,59 @@
+/* STYLE A -- vertical column, centered, evenly spaced */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* space-between spreads the boxes top-to-bottom, gaps flex on resize */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-family: Tahoma, sans-serif;
+  font-size: 40px;
+}
+
+/* flattens the wrapper so A-E + F are all siblings in one flex layout */
+.container {
+  display: contents;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border-top: 1px solid #687291;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;   /* letter near top */
+  padding-top: 8px;
+  color: #333;
+}
+
+/* alternate colors, only hits A-E since F sits outside .container */
+.box:nth-of-type(odd) {
+  background-color: #dfe1e7;
+}
+
+.box:nth-of-type(even) {
+  background-color: #eeeff2;
+}
+
+/* F: dark bg, thick border, centered text */
+.box.last {
+  background-color: #687291;
+  color: #ffffff;
+  border: 4px solid #000000;
+  align-items: center;
+  padding-top: 0;
+}

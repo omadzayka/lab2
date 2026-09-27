@@ -1,22 +1,16 @@
 <!DOCTYPE html>
-
+<!-- same markup, two looks -- just swap the linked stylesheet -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Box Styles</title>
 
-<!-- Swap this href between "styleA.css" and "styleB.css" to change the look -->
+<!-- swap between styleA.css / styleB.css -->
 <link rel="stylesheet" href="styleA.css">
 </head>
 <body>
 
-<!--
-  Boxes A-E live in a wrapper div so that:
-    - Style A can "flatten" this wrapper (display: contents) so all six
-      boxes act as one group of flex items for equal vertical spacing.
-    - Style B can lay this wrapper out as its own horizontal flex row,
-      independent of box F.
--->
+<!-- A-E wrapped so B can row them, A can flatten the wrapper -->
 <div class="container">
   <div class="box" id="box-a">A</div>
   <div class="box" id="box-b">B</div>
@@ -25,8 +19,7 @@
   <div class="box" id="box-e">E</div>
 </div>
 
-<!-- Box F is kept outside the container since it's always styled/positioned
-     as a special case (different color/border in A, fixed corner in B) -->
+<!-- F is always a special case, kept separate -->
 <div class="box last" id="box-f">F</div>
 
 </body>
